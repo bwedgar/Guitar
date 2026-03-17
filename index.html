@@ -20,8 +20,8 @@
         }
         #fretboard {
             display: grid;
-            grid-template-columns: repeat(10, 13mm);
-            grid-template-rows: repeat(6, 10mm);
+            grid-template-columns: repeat(10, 15mm);
+            grid-template-rows: repeat(6, 15mm);
             margin-top: 5mm;
             padding: 5mm;
             background: #2a2a2a;
@@ -57,7 +57,7 @@
         const fretboard = document.getElementById('fretboard');
 
         // New Order: High e (E4), B3, G3, D3, A2, Low E (E2)
-        const stringBaseFreqs = [329.63, 246.94, 196.00, 146.83, 110.00, 82.41]; 
+        const stringBaseFreqs = [82.41,110.00, 146.83,.63, 196.00, 246.94  ]; 
 
         function playNote(frequency) {
             if (audioCtx.state === 'suspended') audioCtx.resume();
