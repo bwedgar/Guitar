@@ -79,7 +79,7 @@
                 
                 // PITCH LOGIC: baseFreq * 2^(fret/12)
                 // Pitch now correctly INCREASES as 'fret' goes from 0 to 9
-                const freq = baseFreq * Math.pow(2, fret / 12);
+                const freq = baseFreq * Math.pow(2,(10-fret) / 12);
                 
                 // Visual string line
                 const line = document.createElement('div');
