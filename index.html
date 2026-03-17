@@ -57,9 +57,13 @@
         const fretboard = document.getElementById('fretboard');
 
         // changed Order: High e (E4), B3, G3, D3, A2, Low E (E2)
-        const stringBaseFreqs = [82.41,110.00, 146.83,.63, 196.00, 246.94  ]; 
+        //const stringBaseFreqs = [82.41,110.00, 146.83,.63, 196.00, 246.94  ]; 
+const stringBaseFreqs = [246.92,196.00,160, 146.83,110,82.41 ]; 
+        
+        
 
-        function playNote(frequency) {
+        
+function playNote(frequency) {
             if (audioCtx.state === 'suspended') audioCtx.resume();
             
             const osc = audioCtx.createOscillator();
