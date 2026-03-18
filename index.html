@@ -104,12 +104,19 @@
         });
 
         function playNote(frequency) {
+            // Add this near the top of your <script> tag
+try {
+    if (navigator.audioSession) {
+        // This tells the iPhone "I'm just a guest, keep Spotify playing!"
+        navigator.audioSession.type = 'playback';
+    }
+} catch (e) { console.log("AudioSession not supported"); }
             if (audioCtx.state === 'suspended') audioCtx.resume();
             
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
 
-            osc.type = 'triangle'; 
+            osc.type = 'sine'; 
             osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
 
             gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
